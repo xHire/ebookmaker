@@ -1,0 +1,11 @@
+ebookmaker is simple collection of few Ruby scripts that aims only to provide a bit simpler way to build an e-book for Kindle from a set of HTML files. It is build on tool called 'kindlegen' (it's 32bit, but runs on 64bit GNU/Linux systems as well as it is statically linked) provided by Amazon which is currently the best available tool on Linux for creating mobi e-books.
+
+I don't provide much documentation -- just code and one example file of e-book specification -- but I think it should be enough.
+
+How to use it? I'll describe one way: Create symlink from ~/bin/ebookmaker to the script (it has to be executable), then go into directory where you have HTML files you want to covert to a book (being named from 0 or 1: 3.html or 4-some_name.html) and create here book.yml -- the specification file. Finally run `ebookmaker` in this directory and e-book will be created (or will not -- depends if you made any mistake or not).
+
+One important note: in the code there are few hardcoded czech strings -- purpose of ebookmaker was just for my personal use but I am open-sourcing it as I thing it can help some other people as well -- so if you'd like, feel free to implement some I18n. ;c)
+
+Feel free to write me about improvements or about any issue you run into. I am opened to any cooperation.
+
+And license? Hmm... MIT License sounds good, so this is the license of this code.

@@ -1,0 +1,12 @@
+title: Book name
+author: Lorem Ipsum
+#cover: cover.jpg
+toc: true
+content_start: 0
+#show_zero: false
+content:
+  - Introduction
+  - Chapter one
+  - Another chapter
+  - This is the last chapter
+#file: ipsum_lorem-book_name.mobi
