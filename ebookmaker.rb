@@ -42,13 +42,15 @@ defaults = {
 print "==> Loading book specification... "
 begin
 spec = YAML.load_file('book.yml')
-rescue Errno::ENOENT
 if spec
   puts "OK"
 else
   puts "FAILED!"
   exit
 end
+rescue Errno::ENOENT
+  puts "FAILED!"
+  exit
 end
 
 spec.each do |k,v|
