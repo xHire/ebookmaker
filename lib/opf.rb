@@ -42,17 +42,19 @@ module Opf
 
       # spine + internal toc (defines the linear reading order of the book)
       f.puts '<spine toc="toc_ncx">'
-      f.puts '<itemref idref="toc" />' if spec[:toc]
+      f.puts '<itemref idref="toc" />' if spec[:toc] and spec[:toc_position] == :start
       spec[:content].each_index do |i|
         f.puts "<itemref idref=\"item#{i + spec[:content_start]}\"/>"
       end
+      f.puts '<itemref idref="toc" />' if spec[:toc] and spec[:toc_position] == :end
       f.puts '</spine>'
 
       # I have no clue what this does...
       f.puts '<guide>'
-      f.puts '<reference type="toc" title="Obsah" href="toc.html"></reference>' if spec[:toc]
+      f.puts '<reference type="toc" title="Obsah" href="toc.html"></reference>' if spec[:toc] and spec[:toc_position] == :start
       # this is probably the place where reading starts
       f.puts "<reference type=\"text\" title=\"#{spec[:content][0]}\" href=\"#{spec[:content_start]}.html\"></reference>"
+      f.puts '<reference type="toc" title="Obsah" href="toc.html"></reference>' if spec[:toc] and spec[:toc_position] == :end
       f.puts '</guide>'
 
       f.puts '</package>'

@@ -33,6 +33,7 @@ FileUtils.mkdir $wd
 defaults = {
   :cover => nil,
   :toc => false,
+  :toc_position => :start,
   :content_start => 1,
   :show_zero => false,
   :file => nil
