@@ -37,7 +37,8 @@ defaults = {
   :toc_numbering => true,
   :content_start => 1,
   :show_zero => false,
-  :file => nil
+  :file => nil,
+  :clean => true
 }
 
 # load book specification from yaml file
@@ -171,4 +172,4 @@ else
 end
 
 # clean temporary files
-FileUtils.rm_rf $wd
+FileUtils.rm_rf $wd if spec[:clean]
