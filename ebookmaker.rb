@@ -34,6 +34,7 @@ defaults = {
   :cover => nil,
   :toc => false,
   :toc_position => :start,
+  :toc_numbering => true,
   :content_start => 1,
   :show_zero => false,
   :file => nil
@@ -108,7 +109,7 @@ end
 # generate HTML content file (stub)
 if spec[:toc]
   print "==> Generating HTML content file... "
-  Toc.generate spec[:title], spec[:author], spec[:content], spec[:content_start], spec[:show_zero]
+  Toc.generate spec[:title], spec[:author], spec[:content], spec[:content_start], spec[:show_zero], spec[:toc_numbering]
   if File.exists?($wd.to_s + 'toc.html.stub')
     puts "OK"
   else

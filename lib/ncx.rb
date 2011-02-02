@@ -25,7 +25,7 @@ module Ncx
 
       content.each_index do |i|
         number = i + content_start
-        if number == 0 and show_zero == false
+        if (number == 0 and show_zero == false) or not numbering
           number = ""
         else
           number = number.to_s + ". "

@@ -1,5 +1,5 @@
 module Toc
-  def self.generate title, author, content, content_start, show_zero
+  def self.generate title, author, content, content_start, show_zero, numbering
     File.open $wd.to_s + 'toc.html.stub', "w" do |f|
       # caption
       f.puts '<h1>Obsah</h1>'
@@ -9,7 +9,7 @@ module Toc
       # content
       content.each_index do |i|
         number = i + content_start
-        if number == 0 and show_zero == false
+        if (number == 0 and show_zero == false) or not numbering
           number = ""
         else
           number = number.to_s + ". "
