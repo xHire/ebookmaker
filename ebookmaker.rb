@@ -147,12 +147,14 @@ else
   puts "NOT FOUND"
 end
 
-print "==> Copying cover... "
-if File.exists?(spec[:cover])
-  FileUtils.cp_r spec[:cover], $wd
-  puts "DONE"
-else
-  puts "NOT FOUND"
+unless spec[:cover].nil?
+  print "==> Copying cover... "
+  if File.exists?(spec[:cover])
+    FileUtils.cp_r spec[:cover], $wd
+    puts "DONE"
+  else
+    puts "NOT FOUND"
+  end
 end
 
 # build mobi
