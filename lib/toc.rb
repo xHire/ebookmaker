@@ -15,7 +15,7 @@ module Toc
           number = number.to_s + ". "
         end
 
-        f.puts "<li><a href=\"#{i}.html\">#{number}#{content[i]}</a></li>"
+        f.puts "<li><a href=\"#{i + content_start}.html\">#{number}#{content[i]}</a></li>"
       end
 
       f.puts '</ul>'

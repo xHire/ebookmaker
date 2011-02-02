@@ -33,7 +33,7 @@ module Ncx
 
         f.puts "<navPoint id=\"ch#{i}\" playOrder=\"#{i + 1}\">"
         f.puts "<navLabel><text>#{number}#{content[i]}</text></navLabel>"
-        f.puts "<content src=\"#{i}.html\" />"
+        f.puts "<content src=\"#{i + content_start}.html\" />"
         f.puts "</navPoint>"
       end
 
