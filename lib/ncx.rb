@@ -1,7 +1,7 @@
 module Ncx
   @@xmlheader = '<?xml version="1.0" encoding="utf-8"?>'
 
-  def self.generate title, author, content, content_start, show_zero
+  def self.generate title, author, content, content_start, show_zero, numbering
     File.open $wd.to_s + 'toc.ncx', "w" do |f|
       # declarations
       f.puts @@xmlheader

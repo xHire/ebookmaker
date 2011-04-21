@@ -100,7 +100,7 @@ end
 
 # generate NCX content file
 print "==> Generating NCX content file... "
-Ncx.generate spec[:title], spec[:author], spec[:content], spec[:content_start], spec[:show_zero]
+Ncx.generate spec[:title], spec[:author], spec[:content], spec[:content_start], spec[:show_zero], spec[:toc_numbering]
 if File.exists?($wd.to_s + 'toc.ncx')
   puts "OK"
 else
