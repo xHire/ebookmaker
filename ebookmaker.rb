@@ -38,6 +38,7 @@ defaults = {
   :content_start => 1,
   :show_zero => false,
   :file => nil,
+  :compresion => 2,
   :clean => true
 }
 
@@ -162,7 +163,7 @@ end
 
 # build mobi
 puts "==> Running kindlegen... "
-system "kindlegen #{$wd}book.opf -c2 -unicode -o #{spec[:file]}"
+system "kindlegen #{$wd}book.opf -c#{spec[:compresion]} -unicode -o #{spec[:file]}"
 if File.exists?($wd.to_s + spec[:file])
   FileUtils.move $wd.to_s + spec[:file], '.'
   puts "==> Book is ready"
