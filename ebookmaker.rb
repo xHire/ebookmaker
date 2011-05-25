@@ -130,6 +130,16 @@ else
   exit
 end
 
+# look for CSS
+print "==> Looking for style.css file... "
+if File.exists?('style.css')
+  puts "FOUND"
+  spec[:css] = true
+else
+  puts "NOT FOUND"
+  spec[:css] = false
+end
+
 # find HTML content of the book
 Dir.glob('*.html') do |f|
   next unless f =~ /^\d+\.html$/ || f =~ /^\d+-.*\.html$/
@@ -139,7 +149,7 @@ end
 
 # process HTML stubs
 print "==> Processing HTML stubs... "
-Html.process_stubs
+Html.process_stubs spec[:css]
 puts "DONE"
 
 # copy images
